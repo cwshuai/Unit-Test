@@ -15,16 +15,21 @@ namespace CalcTest
         public PatientTest(ITestOutputHelper output)
         {
             this.output = output;
+            //为了防止代码重复，new 的实例，在构造函数里实现
             _patient = new Patient();
            
         }
 
+        //一个 test 方法里，只能有一个 assert 。
+        //一个 test 方法里，可以有多个 Asserts，只要这多个 assert 这对一个 Action 就行。
 
         // 对 bool 类型进行判断.
         [Fact]
+        //分组[Trait(“Name”，“Value”)]
         [Trait("Category", "New")]
         public void BeNewWhenCreated()
         {
+            //在测试的时候，console.writeLine( ) 不管用，要使用 outputhelp.WriteLine 进行测试，构造函数引用方法如下。
             output.WriteLine("这是第一个测试");//在这里用 Console.WriteLine()是无效的;
 
             //arrange

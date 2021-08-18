@@ -25,7 +25,7 @@ namespace CalcTest
             Assert.Equal(3, result);//结果等于3
         }
 
-
+        //举例前边的，加法的测试，可以写多个 fact，但是比较麻烦，使用【Theory】+ 【InlineData】有简单的方法。
         [Theory]
         [InlineData(1, 2, 3)]
         [InlineData(1, 3, 4)]
